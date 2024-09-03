@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaUser } from "react-icons/fa6";
+
+import { LiaGamepadSolid } from "react-icons/lia";
 
 export function Header() {
   return (
