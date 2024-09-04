@@ -18,7 +18,7 @@ export async function GetDalygame() {
   }
 }
 
-export default function Home() {
+  const dalyGame: GameProps = await GetDalygame();
   return (
     <>
       <h1>Dev Games</h1>
