@@ -5,15 +5,15 @@ import { LiaGamepadSolid } from "react-icons/lia";
 
 export function Header() {
   return (
-    <header className="w-full h-28  px-10 py-3">
+    <header className="w-full h-28 px-10 py-2 text-black shadow-xl">
       <div className="h-28 max-w-screen-xl  mx-auto flex justify-between items-center">
-        <nav className="flex items-center justify-center gap-16 text-lg">
+        <nav className="flex items-center justify-center gap-8 text-lg">
           <Link href="/">
             <Image
-              src={"/logo.png"}
+              src={"/logomarca.png"}
               alt="Dev Games"
-              width={80}
-              height={80}
+              width={120}
+              height={120}
               quality={100}
               priority
             />
