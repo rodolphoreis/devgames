@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans as DMSans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const dmSans = DMSans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DEV GAMES",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>
+      <body className={dmSans.className}>
         <Header />
         {children}
       </body>
