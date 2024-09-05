@@ -18,9 +18,22 @@ export async function GetDalygame() {
     throw new Error("Failed to fetch data");
   }
 }
+export async function GetCardGames() {
+  try {
+    const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=games`, {
+      next: { revalidate: 120 },
+    });
+
+    return res.json();
+  } catch (error) {
+    throw new Error("Failed to fetch data");
+  }
+}
 
 export default async function Home() {
   const dalyGame: GameProps = await GetDalygame();
+  const cardGames: CardGamesProps[] = await GetCardGames();
+
   return (
     <main className="w-full">
       <Container>
