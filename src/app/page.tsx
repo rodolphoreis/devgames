@@ -1,6 +1,7 @@
 import { Container } from "@/components/container";
+import { CardGames } from "@/components/games";
 import { Input } from "@/components/input";
-import { GameProps } from "@/utils/types/games";
+import { CardGamesProps, GameProps } from "@/utils/types/games";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,6 +19,7 @@ export async function GetDalygame() {
     throw new Error("Failed to fetch data");
   }
 }
+
 export async function GetCardGames() {
   try {
     const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=games`, {
@@ -60,6 +62,8 @@ export default async function Home() {
           </section>
         </Link>
         <Input />
+        <h2 className="mt-4 text-lg">Jogos para conhecer</h2>
+        <CardGames />
       </Container>
     </main>
   );
