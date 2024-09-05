@@ -30,20 +30,29 @@ export function Input() {
     }
   };
 
+  const handleInputChange = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setInput("");
 
-    console.log(input);
+    if (input === "") return;
+    const gameExists = await checkGameExists(input);
+
+    if (gameExists) {
+      router.push(`/game/search/${input}`);
+    } else {
+      setErrorMessage("Jogo não encontrado. Tente outro nome.");
+    }
   };
+
   return (
     <form onSubmit={handleInputChange}>
-      <div className="flex items-center bg-zinc-200 px-5 py-2 mt-5 rounded-xl">
+      <div className="flex items-center bg-zinc-100 px-5 py-2 mt-5 rounded-lg">
         <input
           name="input"
           value={input}
           type="text"
           placeholder="Buscar jogos..."
-          className="w-full  bg-zinc-200 placeholder:text-gray-600 outline-none"
+          className="w-full  bg-zinc-100 placeholder:text-gray-600 outline-none"
           onChange={(event) => setInput(event.target.value)}
         />
 
