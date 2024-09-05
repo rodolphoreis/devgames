@@ -5,8 +5,25 @@ import { FaSearch } from "react-icons/fa";
 
 export function Input() {
   const [input, setInput] = useState("");
+  const checkGameExists = async (gameName: string): Promise<boolean> => {
+    try {
+      const response = await fetch(
+        "https://sujeitoprogramador.com/next-api/?api=games"
+      );
+      const games = await response.json();
 
-  const handleInputChange = (event: FormEvent<HTMLFormElement>) => {
+      const gameFound = games.some(
+        (game: { title: string }) =>
+          game.title.toLowerCase() === gameName.toLowerCase()
+      );
+
+      return gameFound;
+    } catch (error) {
+      console.error("Erro ao buscar jogos da API", error);
+      return false;
+    }
+  };
+
     event.preventDefault();
     setInput("");
 
