@@ -52,6 +52,7 @@ export function Input() {
           <FaSearch size={20} color="orange" />
         </button>
       </div>
+      {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
     </form>
   );
 }
