@@ -3,9 +3,13 @@
 import { FormEvent, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
+import { useRouter } from "next/navigation";
+
 export function Input() {
   const [input, setInput] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const router = useRouter();
 
   const checkGameExists = async (gameName: string): Promise<boolean> => {
     try {
