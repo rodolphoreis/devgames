@@ -5,6 +5,8 @@ import { FaSearch } from "react-icons/fa";
 
 export function Input() {
   const [input, setInput] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const checkGameExists = async (gameName: string): Promise<boolean> => {
     try {
       const response = await fetch(
