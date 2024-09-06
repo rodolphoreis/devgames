@@ -30,7 +30,7 @@ export async function CardGames({ data }: CardGamesInterface) {
             className="rounded-lg hover:opacity-40 mb-2 items-center"
           />
           <div className="flex justify-between px-2">
-            <h3 className=" text-slate-600 ">{game.title}</h3>
+            <h3 className="text-slate-600 truncate w-full">{game.title}</h3>
             <BiRightArrowCircle size={20} className="mt-1" />
           </div>
 
