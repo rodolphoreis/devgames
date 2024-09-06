@@ -5,11 +5,14 @@ import { FaSearch } from "react-icons/fa";
 
 import { useRouter } from "next/navigation";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export function Input() {
   const [input, setInput] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
 
   const router = useRouter();
+  const notify = () => toast("Wow so easy!");
 
   const checkGameExists = async (gameName: string): Promise<boolean> => {
     try {
@@ -40,7 +43,8 @@ export function Input() {
     if (gameExists) {
       router.push(`/game/search/${input}`);
     } else {
-      setErrorMessage("Jogo não encontrado. Tente outro nome.");
+      toast.error("Jogo não encontrado. Tente outro jogo.");
+      setInput("");
     }
   };
 
@@ -61,7 +65,8 @@ export function Input() {
           <FaSearch size={20} color="orange" />
         </button>
       </div>
-      {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
+
+      <ToastContainer />
     </form>
   );
 }
