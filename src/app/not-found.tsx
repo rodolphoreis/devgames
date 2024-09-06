@@ -10,7 +10,10 @@ export default function NotFound() {
         Opsss..Página não encontrada =/
       </h2>
 
-      <Link href="/" className="rounded-lg bg-gray-400 px-8 py-2 text-white">
+      <Link
+        href="/"
+        className="rounded-lg bg-gray-400 px-8 py-2 text-white hover:bg-gray-900"
+      >
         Retornar a Home
       </Link>
     </div>
