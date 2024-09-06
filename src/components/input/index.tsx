@@ -12,8 +12,11 @@ export function Input() {
   const [input, setInput] = useState("");
 
   const router = useRouter();
-  const notify = () => toast("Wow so easy!");
-
+  const notify = () => {
+    toast("Wow so easy!", {
+      autoClose: 3000,
+    });
+  };
   const checkGameExists = async (gameName: string): Promise<boolean> => {
     try {
       const response = await fetch(
