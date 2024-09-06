@@ -62,8 +62,8 @@ export default async function Home() {
           </section>
         </Link>
         <Input />
-        <h2 className="mt-4 text-lg">Jogos para conhecer</h2>
-        <CardGames />
+        <h2 className="mt-6 text-lg mb-3">Jogos para conhecer</h2>
+        <CardGames data={{ cardGames }} />
       </Container>
     </main>
   );
