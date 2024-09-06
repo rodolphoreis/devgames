@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { BorderBeam } from "@/components/magicui/border-beam";
 
+import { BiRightArrowCircle } from "react-icons/bi";
+
 export interface CardGamesInterface {
   data: {
     cardGames: CardGamesProps[];
@@ -15,20 +17,23 @@ export async function CardGames({ data }: CardGamesInterface) {
   }
 
   return (
-    <section className="w-full gap-5 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+    <section className="w-full gap-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
       {data.cardGames.map((game) => (
         <Link
           href={`/`}
           key={game.id}
           className="bg-zinc-100 flex flex-col px-2 py-2 rounded-lg justify-center text-center transition-transform transform hover:scale-105 duration-300"
         >
-          <h3 className="mb-2 text-slate-600">{game.title}</h3>
-
           <img
             src={game.image_url}
             alt={game.title}
-            className="rounded-lg hover:opacity-40"
+            className="rounded-lg hover:opacity-40 mb-2 items-center"
           />
+          <div className="flex justify-between px-2">
+            <h3 className=" text-slate-600 ">{game.title}</h3>
+            <BiRightArrowCircle size={20} className="mt-1" />
+          </div>
+
           <BorderBeam size={50} duration={10} delay={13} />
         </Link>
       ))}
