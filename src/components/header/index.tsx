@@ -5,8 +5,8 @@ import { LiaGamepadSolid } from "react-icons/lia";
 
 export function Header() {
   return (
-    <header className="w-full h-28 px-10 py-2 text-black shadow-xl">
-      <div className="h-28 max-w-screen-xl  mx-auto flex justify-between items-center">
+    <header className="w-full h-20 px-10 py-0 text-black shadow-xl">
+      <div className="h-20 max-w-screen-xl  mx-auto flex justify-between items-center">
         <nav className="flex items-center justify-center gap-8 text-lg">
           <Link href="/">
             <Image
