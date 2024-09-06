@@ -20,7 +20,7 @@ export async function CardGames({ data }: CardGamesInterface) {
     <section className="w-full gap-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
       {data.cardGames.map((game) => (
         <Link
-          href={`/`}
+          href={`/game/${game.id}`}
           key={game.id}
           className="bg-zinc-100 flex flex-col px-2 py-2 rounded-lg justify-center text-center transition-transform transform hover:scale-105 duration-300"
         >
